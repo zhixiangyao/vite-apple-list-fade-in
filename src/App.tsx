@@ -1,6 +1,6 @@
-import { defineComponent } from 'vue';
-import { RouterLink, RouterView } from 'vue-router';
-import './style/main.scss';
+import { defineComponent } from 'vue'
+import { RouterLink, RouterView } from 'vue-router'
+import './style/main.scss'
 
 export default defineComponent({
   name: 'App',
@@ -12,6 +12,6 @@ export default defineComponent({
         </div>
         <RouterView />
       </>
-    );
+    )
   },
-});
+})
