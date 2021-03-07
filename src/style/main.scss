@@ -2,15 +2,16 @@
   --device-width: 770px;
   --device-height: 1336px;
   --ui-width: 640px;
+
   font-size: 15px;
 }
 
 body {
-  background-color: #000;
-  margin: 0;
   min-width: 1000px;
   min-height: 100vh;
+  margin: 0;
   font-family: Helvetica;
+  background-color: #000;
 }
 
 #app {
