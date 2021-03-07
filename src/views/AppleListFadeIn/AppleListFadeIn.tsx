@@ -18,12 +18,12 @@ export default defineComponent({
       const rows = document.querySelectorAll('#ui ul li') as NodeListOf<HTMLElement>
       const html = document.documentElement
 
-      document.addEventListener('scroll', (e) => {
+      document.addEventListener('scroll', () => {
         const scrolled = html.scrollTop / (html.scrollHeight - html.clientHeight)
 
         const total = 1 / rows.length
 
-        for (let [index, row] of rows.entries()) {
+        for (const [index, row] of rows.entries()) {
           const start = total * index
           const end = total * (index + 1)
 
