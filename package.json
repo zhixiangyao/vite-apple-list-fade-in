@@ -6,7 +6,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "npm run build && vite preview",
-    "preview:dist": "vite preview"
+    "preview:dist": "vite preview",
+    "lint:all": "npm run lint:eslint && npm run lint:prettier && npm run lint:stylelint",
+    "lint:eslint": "eslint \"{src,mock}/**/*.{vue,ts,tsx}\" --fix",
+    "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
+    "lint:stylelint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
   },
   "dependencies": {
     "vue": "^3.0.5",
@@ -26,6 +30,10 @@
     "eslint-plugin-vue": "^7.7.0",
     "prettier": "^2.2.1",
     "sass": "^1.26.10",
+    "stylelint": "^13.11.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
     "typescript": "^4.1.3",
     "vite": "^2.0.5",
     "vue-eslint-parser": "^7.1.0"
