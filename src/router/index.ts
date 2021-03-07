@@ -1,9 +1,13 @@
 import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
 
-const routes: RouteRecordRaw[] = []
+const AppleListFadeIn = () => import('../views/AppleListFadeIn/AppleListFadeIn')
+
+const routes: RouteRecordRaw[] = [
+  { path: '/', component: AppleListFadeIn, name: 'AppleListFadeIn' },
+]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes,
 })
 

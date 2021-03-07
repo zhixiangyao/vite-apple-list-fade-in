@@ -1,21 +1,42 @@
 {
-  "include": ["./**/*.ts"],
   "compilerOptions": {
-    "jsx": "react",
-    "target": "es2020" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */,
-    "module": "commonjs" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
-    // "lib": ["es2017.object"] /* Specify library files to be included in the compilation. */,
-    // "declaration": true /* Generates corresponding '.d.ts' file. */,
-    // "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */
-    "sourceMap": true /* Generates corresponding '.map' file. */,
-    // "outFile": "./",                       /* Concatenate and emit output to single file. */
-    "outDir": "./dist" /* Redirect output structure to the directory. */,
+    // 指定ECMAScript目标版本
+    "target": "esnext",
 
-    "strict": true /* Enable all strict type-checking options. */,
-    "noUnusedLocals": true /* Report errors on unused locals. */,
-    "noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
+    // 指定生成哪个模块系统代码
+    "module": "esnext",
 
-    "moduleResolution": "node" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */,
-    "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
-  }
+    // 决定如何处理模块。
+    "moduleResolution": "node",
+
+    // 启用所有严格类型检查选项。
+    // 启用 --strict相当于启用 --noImplicitAny, --noImplicitThis, --alwaysStrict，
+    // --strictNullChecks和 --strictFunctionTypes和--strictPropertyInitialization。
+    "strict": true,
+
+    "jsx": "preserve",
+
+    // 生成相应的 .map文件。
+    "sourceMap": true,
+
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+
+    // 要包含的类型声明文件名列表
+    "types": ["vite/client", "node"],
+
+    // 解析非相对模块名的基准目录
+    "baseUrl": ".",
+
+    // 模块名到基于 baseUrl的路径映射的列表。
+    "paths": {
+      // 这里搭配 alias 使用
+      "/@/*": ["src/*"]
+    },
+
+    // 编译过程中需要引入的库文件的列表。
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules"]
 }
