@@ -1,1 +1,3 @@
-使用 vite 开发 Apple iPhone 12 页面卷动逐行滑入效果
+# vite apple list fade in
+
+Use Vite for Apple iPhone 12 page scrolling line by line slide
